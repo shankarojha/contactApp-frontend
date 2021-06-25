@@ -1,0 +1,108 @@
+.row {
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.233);
+  padding: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s;
+}
+
+.row:hover {
+  width: 81.5vw;
+  box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-group {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.buttonLogin {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  transition: 0.25s;
+}
+
+.buttonLogin:hover {
+  background-color: black;
+  color: white;
+}
+
+.buttonLogin:focus {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0);
+}
+
+.linkClass {
+  color: black;
+}
+
+.form-control:focus {
+  border-color: black;
+}
+
+.formBox input[type="email"],
+.formBox input[type="password"],
+.formBox label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  transition: 0.25s;
+}
+
+.formBox button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  margin-top: 5vh;
+}
+
+.formBox input[type="email"]:hover,
+.formBox input[type="password"]:hover {
+  width: 55%;
+  border-color: green;
+}
+
+@media only screen and (max-width: 480px) {
+  .buttonLogin {
+    font-size: 10px;
+  }
+
+  .linkClass {
+    color: black;
+  }
+
+  .form-group {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .buttonLogin {
+    font-size: 10px;
+  }
+
+  .linkClass {
+    color: black;
+  }
+
+  .form-group {
+    font-size: 15px;
+  }
+}

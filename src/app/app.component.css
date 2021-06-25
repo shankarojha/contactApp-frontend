@@ -1,0 +1,16 @@
+.navCustom{
+    margin-bottom: 1vh;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.customImg{
+    position:static;
+    max-height: 10vh;
+}
+
+@media only screen and (max-width:768px){
+    .customImg{
+        position:static;
+        max-height: 6vh;
+    }
+}

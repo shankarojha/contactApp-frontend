@@ -23,7 +23,6 @@ export class AppService {
   }
 
   public signupFunction(file):Observable<any>{
-    const params = new HttpParams()
    /* .set('contactName', data.contactName)
     .set('dob',data.dob)
     .set('email', data.email)

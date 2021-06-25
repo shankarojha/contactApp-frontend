@@ -38,17 +38,33 @@ export class SignupComponent implements OnInit {
 
   public signupFunction(): any {
     if (!this.contactName) {
+      let element = document.getElementById('contactName1');
+      element.classList.add('is-invalid');
       this.toastr.warning('please enter your Name');
+
     } else if (!this.dob) {
+      let element = document.getElementById('dobirth');
+      element.classList.add('is-invalid');
       this.toastr.warning('please enter your Date of birth');
-    } else if (!this.mobile) {
-      this.toastr.warning('please enter your Mobile Number');
+
     } else if (!this.email) {
+      let element = document.getElementById('InputEmail1');
+      element.classList.add('is-invalid');
       this.toastr.warning('please enter your email');
+
     } else if (!this.password) {
+      let element = document.getElementById('InputPassword1');
+      element.classList.add('is-invalid');
       this.toastr.warning('please enter your password');
+
+    } else if (!this.mobile) {
+      let element = document.getElementById('mobile1');
+      element.classList.add('is-invalid');
+      this.toastr.warning('please enter your Mobile Number');
+
     } else if (!this.image) {
-      this.toastr.warning('please enter your password');
+      this.toastr.warning('please upload your image');
+
     } else {
       let formData = new FormData();
       formData.append('contactName', this.contactName);
@@ -58,22 +74,23 @@ export class SignupComponent implements OnInit {
       formData.append('password', this.password);
       formData.append('mobile', this.mobile);
 
-      this.appService.signupFunction(formData).subscribe(
-        (apiResponse) => {
-          console.log(apiResponse);
-          if (apiResponse.status === 200) {
-            this.toastr.success('successfully signedup');
-            setTimeout(() => {
-              this.router.navigate(['']);
-            }, 5000);
-          } else {
-            this.toastr.error(apiResponse.message);
+      if (formData) {
+        this.appService.signupFunction(formData).subscribe(
+          (apiResponse) => {
+            if (apiResponse.status === 200) {
+              this.toastr.success('successfully signedup');
+              setTimeout(() => {
+                this.router.navigate(['']);
+              }, 5000);
+            } else {
+              this.toastr.error(apiResponse.message);
+            }
+          },
+          (err) => {
+            this.toastr.error('error occured');
           }
-        },
-        (err) => {
-          this.toastr.error('error occured');
-        }
-      );
+        );
+      }
     }
   }
 }
