@@ -1,0 +1,17 @@
+ <div *ngFor="let contact of contacts">
+      
+    <a (click)=setContactClicked(contact.userId) routerLink='/contactdetails'>{{contact.userId}} and {{contact.contactName}}<br></a>
+    
+ </div> 
+ <button (click)='increasepagination()'>Click me</button>
+
+
+  <!-- <div class="container-fluid">
+     <div class="row">
+           
+            <div *ngFor="contact of contacts"><h1>{{contact.contactName}}</h1></div>
+     </div>
+ </div> -->
+    
+
+   

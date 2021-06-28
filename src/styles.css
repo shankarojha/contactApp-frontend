@@ -1,3 +1,8 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .login-page {
   width: 100vw;
   height: 100vh;
@@ -16,7 +21,7 @@
     hsl(179, 85%, 66%)
   );
   background-size: 300% 300%;
-  background-position: 0 50%;
+  background-position: 0 25%;
   animation: moveGradient 4s alternate infinite;
 }
 

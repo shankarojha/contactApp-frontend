@@ -23,12 +23,6 @@ export class AppService {
   }
 
   public signupFunction(file):Observable<any>{
-   /* .set('contactName', data.contactName)
-    .set('dob',data.dob)
-    .set('email', data.email)
-    .set('mobile', data.mobile)
-    .set('password',data.password)*/
-
     return this.http.post(`${this.url}/signup`,file);
   }
 
@@ -45,6 +39,14 @@ export class AppService {
 
   public getAllContacts():Observable<any>{
     return this.http.get(`${this.url}/getContacts`)
+  }
+
+  public getCount():Observable<any>{
+    return this.http.get(`${this.url}/getTotalNumberOfContacts`)
+  }
+
+  public getPaginatedContacts(skip,limit):Observable<any>{
+    return this.http.get(`${this.url}/getContactsPagination?skip=${skip}&limit=${limit}`)
   }
 
   
