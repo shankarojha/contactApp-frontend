@@ -1,17 +1,39 @@
- <div *ngFor="let contact of contacts">
+<!-- <div *ngFor="let contact of contacts">
       
     <a (click)=setContactClicked(contact.userId) routerLink='/contactdetails'>{{contact.userId}} and {{contact.contactName}}<br></a>
     
  </div> 
- <button (click)='increasepagination()'>Click me</button>
+ <button (click)='increasepagination()'>Click me</button> -->
 
-
-  <!-- <div class="container-fluid">
-     <div class="row">
-           
-            <div *ngFor="contact of contacts"><h1>{{contact.contactName}}</h1></div>
-     </div>
- </div> -->
-    
-
-   
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <table class="table table-dark" style="text-align: center">
+        <thead>
+          <tr>
+            <th scope="col">Profile picture</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <td>
+              <img
+                src="http://localhost:3000/{{contact.imagepath}}"
+                style="border-radius: 50%; height: 75px; width: 75px"
+              />
+            </td>
+            <td>{{contact.contactName}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.mobile}}</td>
+            <td>{{contact.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
